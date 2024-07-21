@@ -15,8 +15,6 @@ let computerStarts = false;
 
 
 
-// Set default theme as dark mode
-document.body.classList.add('dark-mode');
 
 // Theme toggle button event listener
 themeToggleBtn.addEventListener('click', () => {
