@@ -1,0 +1,246 @@
+/* Basic Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header and Footer Styling */
+header, footer {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Align header elements */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    flex: 2; /* Makes the heading take up remaining space */
+    text-align: left; /* Align text to the left */
+}
+
+.theme-toggle {
+    margin-left: auto; /* Pushes the button to the right */
+}
+
+/* Light Mode */
+.light-mode {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.light-mode header {
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.light-mode a {
+    color: #003366; /* Dark blue for light mode */
+}
+
+.light-mode .cell {
+    background-color: #ddd;
+    color: #333;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #333;
+    color: #f9f9f9;
+}
+
+.dark-mode header {
+    background-color: #444;
+    color: #f9f9f9;
+}
+
+.dark-mode a {
+    color: #ADD8E6; /* Light blue for dark mode */
+}
+
+.dark-mode .cell {
+    background-color: #444;
+    color: #f9f9f9;
+}
+
+/* Ensure hover effects in dark mode */
+.dark-mode .cell:hover {
+    background-color: #555; /* Darker shade on hover for dark mode */
+}
+
+.dark-mode button {
+    background-color: #555;
+    border: 1px solid #444;
+}
+
+.dark-mode button:hover {
+    background-color: #666; /* Darker shade on hover for dark mode */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+button:focus {
+    outline: none;
+}
+
+.selected {
+    background-color: #007bff; /* Blue background for selected */
+    color: #fff; /* White text color for contrast */
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Game Container */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Board Styles */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin-bottom: 20px;
+    width: 300px; /* Fixed width */
+    height: 300px; /* Fixed height */
+    /* Use `flex` to ensure the board maintains its size */
+    flex-shrink: 0;
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cell.highlight {
+    border: 2px solid yellow;
+}
+
+.cell:hover {
+    background-color: #bbb; /* Light mode hover */
+}
+
+/* Button Styles */
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Result Message */
+.results {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    height: 40px; /* Reserve space for the result message */
+    line-height: 40px; /* Center text vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Light Mode Specific Styles */
+.light-mode .results {
+    color: #333;
+}
+
+/* Dark Mode Specific Styles */
+.dark-mode .results {
+    color: #f9f9f9;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .game-container {
+        width: 90%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+        width: 240px;
+        height: 240px;
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .results {
+        font-size: 1rem;
+        height: 30px;
+        line-height: 30px;
+    }
+}
+
+@media (max-width: 400px) {
+    .board {
+        grid-template-columns: repeat(3, 70px);
+        grid-template-rows: repeat(3, 70px);
+        width: 210px;
+        height: 210px;
+    }
+
+    .cell {
+        width: 70px;
+        height: 70px;
+        font-size: 1.2rem;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .results {
+        font-size: 0.9rem;
+        height: 30px;
+        line-height: 30px;
+    }
+}
+
+/* Hide Single Player Options by default */
+.single-player-options {
+    display: none;
+}
+
+/* Show Single Player Options when Single Player mode is selected */
+#singlePlayerBtn.selected ~ .single-player-options {
+    display: flex;
+}

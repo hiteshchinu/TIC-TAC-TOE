@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="light-mode"> <!-- Default to light mode -->
+    <header>
+        <h1>Tic Tac Toe</h1>
+        <div class="theme-toggle">
+            <button id="themeToggleBtn">Toggle Dark/Light Mode</button>
+        </div>
+        
+    </header>
+    
+    <main>
+        <div class="game-container">
+            <div class="board">
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+            </div>
+            <div class="controls">
+                <button id="singlePlayerBtn">Single Player</button>
+                <button id="doublePlayerBtn">Multiplayer</button>
+                <button id="resetBtn">Reset</button>
+            </div>
+            <div class="single-player-options" id="singlePlayerOptions">
+                <button id="humanFirstBtn">Human First</button>
+                <button id="computerFirstBtn">Computer First</button>
+            </div>
+            <div class="results">
+                <p id="resultMessage"></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy;  <a href="https://hiteshchinu.github.io/TIC-TAC-TOE/">Hitesh 2024</a></p>
+        <a href="https://www.linkedin.com/in/hitesh2002" target="_blank">
+            <i class="fab fa-linkedin icon-linkedin"></i>
+        </a>
+        <a href="https://github.com/hiteshchinu" target="_blank">
+            <i class="fab fa-github icon-github"></i>
+        </a>
+    </footer>
+    
+    <script src="main.js"></script>
+</body>
+</html>
